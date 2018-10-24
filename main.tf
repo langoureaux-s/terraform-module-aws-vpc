@@ -59,5 +59,5 @@ module "security_group" {
   
   # Allow icmp, web, dns and ntp
   egress_cidr_blocks = ["0.0.0.0/0"]
-  egress_rules = ["all-icmp", "http-tcp-80", "http-tcp-443", "dns-udp", "dns-tcp", "ntp-udp"]
+  egress_rules = ["all-icmp", "http-80-tcp", "https-443-tcp", "dns-udp", "dns-tcp", "ntp-udp"]
 }
