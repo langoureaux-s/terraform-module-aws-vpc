@@ -17,6 +17,12 @@ module "vpc" {
   single_nat_gateway    = true
 
   tags                  = "${var.tags}"
+  private_subnet_tags   = {
+                            tier = "private"
+                          }
+  public_subnet_tags   = {
+                            tier = "public"
+                          }
 }
 
 
