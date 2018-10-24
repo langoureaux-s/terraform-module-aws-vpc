@@ -30,7 +30,7 @@ module "security_group" {
   
   # Allow ping between private subnets
   ingress_cidr_blocks = "${var.subnets}"
-  ingress_rules = ["ping-icmp"]
+  ingress_rules = ["all-icmp"]
 
   # Allow SSH and RDP from all internal network
   ingress_with_cidr_blocks = [
@@ -59,5 +59,5 @@ module "security_group" {
   
   # Allow icmp, web, dns and ntp
   egress_cidr_blocks = ["0.0.0.0/0"]
-  egress_rules = ["ping-icmp", "http-tcp-80", "http-tcp-443", "dns-udp-53", "ntp-udp-123"]
+  egress_rules = ["all-icmp", "http-tcp-80", "http-tcp-443", "dns-udp", "dns-tcp", "ntp-udp"]
 }
