@@ -1,10 +1,6 @@
-provider "aws" {
-  region = "${var.location}"
-}
-
 # Create the VPC and subnet
 module "vpc" {
-  source = "github.com/terraform-aws-modules/terraform-aws-vpc"
+  source = "github.com/terraform-aws-modules/terraform-aws-vpc?ref=v1.60.0"
 
   name                  = "${var.vpc_name}"
   cidr                  = "${var.network}"
@@ -28,7 +24,7 @@ module "vpc" {
 
 # Create security rules
 module "security_group" {
-  source = "github.com/terraform-aws-modules/terraform-aws-security-group"
+  source = "github.com/terraform-aws-modules/terraform-aws-security-group?ref=v2.16.0"
 
   name        = "admin"
   description = "Security group for ssh, https input and all output"
