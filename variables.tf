@@ -1,6 +1,3 @@
-variable "location" {
-  description = "DC area"
-}
 variable "vpc_name" {
   description = "Ressource group name"
 }
