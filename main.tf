@@ -26,7 +26,7 @@ module "vpc" {
 module "security_group" {
   source = "github.com/terraform-aws-modules/terraform-aws-security-group?ref=v2.16.0"
 
-  name        = "admin"
+  name        = "${secutiry_group_name}"
   description = "Security group for ssh, https input and all output"
   vpc_id      = "${module.vpc.vpc_id}"
   

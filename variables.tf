@@ -16,6 +16,10 @@ variable "subnets" {
 variable "nat_subnet" {
   description = "The nat subnet to deploy vpn/router on it"
 }
+variable "secutiry_group_name" {
+  description = "The admin security group name"
+  default = "admin"
+}
 
 variable "tags" {
   type = "map"
